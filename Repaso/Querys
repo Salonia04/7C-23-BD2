@@ -1,0 +1,9 @@
+CONSULTAS
+
+Primera consulta
+select * from Sede;
+
+Segunda consulta
+select nombre, apellido, edad from Socio where >= 70;
+
+
