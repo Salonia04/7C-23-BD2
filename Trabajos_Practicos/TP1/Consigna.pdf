@@ -1,0 +1,42 @@
+Caso 4: Servicio de Esports
+Un servicio de esports ofrece torneos en línea y partidas personalizadas para los usuarios
+que se registran en la plataforma. Los usuarios deben crear una cuenta en la plataforma
+proporcionando su nombre, correo electrónico, fecha de nacimiento y nombre de usuario.
+Además, los usuarios pueden ingresar información adicional, como su ubicación y su juego
+favorito.
+Los usuarios pueden unirse a diferentes torneos que se ofrecen en la plataforma y deben
+proporcionar información adicional, como su gamertag y su nivel de habilidad en el juego en
+el que participarán. Cada torneo tiene una fecha de inicio y una fecha de finalización, y los
+usuarios pueden ver el estado de sus torneos activos.
+Además de los torneos, los usuarios pueden solicitar partidas personalizadas con otros
+usuarios en la plataforma. Para hacerlo, deben proporcionar el juego en el que quieren
+jugar, la fecha y hora, la duración esperada y el número de jugadores que desean participar.
+Otros usuarios pueden ver estas solicitudes y unirse a la partida personalizada si así lo
+desean.
+La plataforma también ofrece un sistema de clasificación basado en el rendimiento de los
+usuarios en los torneos y partidas personalizadas. Los usuarios obtienen puntos por cada
+partida que juegan y se les asigna una posición en la clasificación general. Los usuarios
+también pueden ver la clasificación de otros usuarios en la plataforma.
+La plataforma también registra el historial de partidas de los usuarios, incluyendo los
+resultados de los torneos en los que han participado y las partidas personalizadas que han
+jugado. Los usuarios pueden ver su historial de partidas en su perfil de usuario.
+La administración del servicio de esports desea generar informes sobre el rendimiento de
+los usuarios en los torneos y partidas personalizadas, así como sobre las estadísticas de
+uso de la plataforma, como la cantidad de usuarios nuevos registrados cada mes y la
+cantidad de partidas personalizadas creadas cada semana. También desean poder
+identificar usuarios que han recibido sanciones por incumplimiento de las normas de la
+plataforma.
+
+Caso 4: Servicio de Esports
+● Mostrar la cantidad de torneos activos que tiene un usuario en específico, cuyo nivel
+de habilidad es “casual” y listando el nombre de cada torneo con su fecha de
+finalización
+● Mostrar los 10 jugadores con más puntos, junto con la cantidad de partidas y torneos
+jugados y su porcentaje de victorias
+● Obtener la cantidad de usuarios nuevos del mes actual comparándolo con el mes
+anterior
+● Mostrar los últimos torneos finalizados, con la cantidad de sanciones realizadas,
+cantidad de usuarios participantes, el ganador y la cantidad de puntos obtenidos
+● Obtener el posicionamiento promedio en torneos de los usuarios cuyo nivel de
+habilidad es experto junto con la cantidad de puntos obtenidos y su cantidad de
+torneos y partidas jugadas
