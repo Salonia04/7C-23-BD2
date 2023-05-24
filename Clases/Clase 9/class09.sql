@@ -1,4 +1,4 @@
-Exercises:
+-- Exercises:
 
 -- 1. Get the amount of cities per country in the database. Sort them by country, country_id.
 select co.country, count(ci.city) as cities
