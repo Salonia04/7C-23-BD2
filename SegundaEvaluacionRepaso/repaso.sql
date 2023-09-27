@@ -197,21 +197,65 @@ inner join payment p on p.customer_id = c.customer_id
 group by customer
 ;
 
-/* CLASE 8 ------------------------------------------------------------------------------------ */
+/* CLASE 9 ------------------------------------------------------------------------------------ */
 
 -- Get the amount of cities per country in the database. Sort them by country, country_id.
+select co.country_id, co.country, count(ci.city_id) as cities
+from city ci 
+inner join country co on co.country_id = ci.country_id
+group by co.country_id, co.country
+order by co.country_id;
 
+select ci.city, co.country
+from city ci 
+inner join country co on co.country_id = ci.country_id
+where co.country = "Argentina";
 
 -- Get the amount of cities per country in the database. Show only the countries with more than 10 cities, order from the highest amount of cities to the lowest
-
+select co.country_id, co.country, count(ci.city_id) as cities
+from city ci 
+inner join country co on co.country_id = ci.country_id
+group by co.country_id, co.country
+having count(ci.city) > 10
+order by co.country_id;
 
 -- Generate a report with customer (first, last) name, address, total films rented and the total money spent renting films.
 --     Show the ones who spent more money first .
+select concat(c.first_name, ' ', c.last_name) as full_name, a.address, count(r.rental_id) as total_rented, sum(p.amount) as amount
+from customer c
+inner join address a on a.address_id = c.address_id
+inner join rental r on r.customer_id = c.customer_id
+inner join payment p on p.rental_id = r.rental_id
+group by full_name, a.address;
 
+select concat(c.first_name, ' ', c.last_name) as full_name, a.address, (
+    select count(r.rental_id)
+    from rental r
+    where r.customer_id = c.customer_id
+) as rented_films, (
+    select sum(p.amount) as money_spent
+    from payment p
+    where p.customer_id = c.customer_id
+) as amount
+from customer c
+inner join address a on a.address_id = c.address_id
+group by c.customer_id
+order by amount desc;
 
 -- Which film categories have the larger film duration (comparing average)?
 --     Order by average in descending order
-
+select ca.name, avg(f.length) as average_duration
+from category ca
+inner join film_category fca on fca.category_id = ca.category_id
+inner join film f on f.film_id = fca.film_id
+group by ca.name
+order by average_duration desc;
 
 -- Show sales per film rating
+select f.rating, count(r.rental_id) as sales, sum(p.amount) as total
+from film f
+inner join inventory i on i.film_id = f.film_id
+inner join rental r on r.inventory_id = i.inventory_id
+inner join payment p on p.rental_id = r.rental_id
+group by f.rating;
 

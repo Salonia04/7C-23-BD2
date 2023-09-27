@@ -1,17 +1,17 @@
 -- Exercises:
 
 -- 1. Get the amount of cities per country in the database. Sort them by country, country_id.
-select co.country, count(ci.city) as cities
+select co.country, count(ci.city_id) as cities
 from country co
 inner join city ci on ci.country_id = co.country_id
 group by co.country_id; 
 
 -- 2. Get the amount of cities per country in the database. Show only the countries with more than 10 cities, order from the highest amount of cities to the lowest
-select co.country, count(ci.city) as cities
+select co.country, count(ci.city_id) as cities
 from country co
 inner join city ci on ci.country_id = co.country_id
 group by co.country_id
-having count(ci.city) > 10;
+having count(ci.city_id) > 10;
 
 -- 3. Generate a report with customer (first, last) name, address, total films rented and the total money spent renting films. Show the ones who spent more money first.
 select concat(c.last_name, ' ', c.first_name) as full_name, a.address, (
@@ -44,4 +44,4 @@ from film f
 inner join inventory i on f.film_id = i.film_id
 inner join rental r on i.inventory_id = r.inventory_id
 inner join payment p on r.rental_id = p.rental_id
-group by f.rating desc;
+group by f.rating;
