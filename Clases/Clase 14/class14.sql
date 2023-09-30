@@ -28,7 +28,7 @@
     from film f
     inner join film_actor fa on fa.film_id = f.film_id
     inner join actor a on a.actor_id = fa.actor_id
-    where CONCAT_WS(first_name, ' ', last_name) like trim(upper("lUka mOdrIC"));
+    where CONCAT_WS(a.first_name, ' ', a.last_name) like trim(upper("JULIANNE DENCH"));
 
     -- 4. Find all the rentals done in the months of May and June. Show the film title, customer name and if it was returned or not. There should be returned column with two possible values 'Yes' and 'No'.
 
